@@ -1,6 +1,11 @@
 #logo {
-    height: 50px;
-    width: 100px;
+    height: 60px;
+    width: 60px;
+}
+.img-carousel{
+    height: 40vh;
+    width: 80vh;
+    text-align: center;
 }
 
 .register__data-register input {

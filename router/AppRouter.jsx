@@ -1,24 +1,21 @@
 import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
-import { Navigate, Route, Routes } from 'react-router-dom';
-import { Mujer } from '../pages/Mujer';
-import { Hombre} from '../pages/Hombre';
-import { NavLogIn } from '../graphic- interface/components/NavLogIn';
+import { RouterLogin } from '../auth/pages/RouterLogin';
+import { Login } from '../auth/pages/Login';
 
 
 
 export const AppRouter = () => {
   return (
     <>
-      <NavLogIn/>
 
       <Routes>
-        <Route path="hombre" element={ <Hombre/> } />
-        <Route path="mujer" element={ <Mujer/> } />
 
-        <Route path="/" element={ <Navigate to="/mujer" />} />
+        <Route path="login" element={ <Login/> } />
 
-        
+        <Route path="/*" element={ <RouterLogin/>} />
+
       </Routes>
     </>
   )
