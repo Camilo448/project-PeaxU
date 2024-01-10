@@ -1,41 +1,43 @@
 import React from "react"
 import Logo from '../../assets/logo_peakU.png'
+import Image from '../../assets/register-image.jpg'
 import '../../src/styles.css'
 
 export const Register = () => {
+    const colorNav = {
+        backgroundColor: '#F8E559', 
+        color: '#402B3A', 
+        padding: '15px', 
+      }
 
-    return (
-      
-        <div className="register">
-            <nav className="navbar navbar-expand-lg navbar-primary bg-warning p-3">
-                <img src={Logo} className='img-fluid img-thumbnail' id='logo' />
-            </nav>
-            <div className="d-flex flex-column justify-content-center align-items-center">
-            
-                <div className='register__title'>
-                    <h2>Hola! registrate para iniciar</h2>
-                </div>
+    return ( 
 
-                <div className='register__data-register d-flex flex-column mt-3'>
-                    <input className="m-2" type="nombreUsuario" placeholder='Nombre de usuario' id='name'/>
-                    <input className="m-2" type="correo" placeholder='Correo Electrónico' id='email' />
-                    <input className="m-2" type="contraseña" placeholder='Contraseña' id='pass' />
-                </div>
-
-                <button className="btn btn-secondary m-3">Registrate</button>
-
-                <div className='register__container'>
-
-                    <div className='register__link--text m-2'>
-                        <h4>¿Ya tienes una cuenta?</h4>
+        <div className="register m-5">
+            <div className ="row justify-content-center">
+                <div class="col-md-10">
+                    <div className="card">
+                        <div className=" card-header" style={ colorNav }>
+                            <h4 className="text-center">Registrate</h4>
+                        </div>
+                        <div className="card-body d-flex">
+                            <div className="col-md-4 p-3 m-3 ms-5">
+                                <img src= { Image } className='img-fluid img-thumbnail'/>
+                            </div>
+                            <form className="col-md-5 d-flex flex-column justify-content-center align-items-center ms-5">
+                                <div className="form-group m-2 w-100">
+                                    <h5 className="m-3 mb-5">Ingresa tus datos</h5>
+                                    <input type="text" className="form-control m-3" id="user" placeholder="Ingresa tu usuario"/>
+                                    <input type="text" className="form-control m-3" id="email" placeholder="Ingresa tu correo"/>
+                                    <input type="text" className="form-control m-3" id="password" placeholder="Ingresa una contraseña"/>
+                                </div>
+                                <div className="form-group m-3 d-flex justify-content-between align-items-center w-100">
+                                    <button type="submit" className="btn btn-primary btn-block m-3">Registrarme</button>
+                                    <a>Inicia sesion</a>
+                                </div>
+                            </form>
+                        </div>
                     </div>
-
-                    <div className='register__link--color d-flex align-self-end'>
-                        <a href="link-login">Login</a>
-                    </div>
-
                 </div>
-
             </div>
         </div>
     )
