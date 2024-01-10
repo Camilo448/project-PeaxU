@@ -1,5 +1,5 @@
 import React from "react"
-import  image_login  from '../../assets/image_login.jpg'
+import img_login from '../../assets/imagen_login.jpg';
 
 
 export const Login = () => {
@@ -19,10 +19,10 @@ export const Login = () => {
                 <h4 className="text-center">Inicio de Sesión</h4>
             </div>
 
-            <div className="card-body m-4 p-3">
+            <div className="card-body m-3 p-3">
                 <div className="row">
-                  <div className="col-md-6 text-center">
-                  <img src= { image_login } className='img-fluid img-thumbnail'/>
+                  <div className="col-md-5 text-center">
+                  <img src= { img_login } className='img-fluid img-thumbnail'/>
                   </div>
                   <div className="col-md-6">
                       <form>
@@ -36,7 +36,7 @@ export const Login = () => {
                             <label for="contrasena">Contraseña:</label>
                             <input type="password" className="form-control" id="contrasena" placeholder="Ingresa tu contraseña"/>
                         </div>
-                        <div className="d-flex justify-content-between align-items-center">
+                        <div className="d-flex justify-content-between align-items-center mt-5" >
                           <button type="submit" className="btn btn-primary btn-block m-4">Iniciar Sesión</button>
                           <span>Olvide mi contraseña</span>
                         </div>

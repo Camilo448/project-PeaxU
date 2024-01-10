@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, NavLink } from "react-router-dom"
-import Logo from '../../assets/logo_peakU.png'
+import Logo from '../../assets/Logo_dingo.jpg'
 import '../../src/styles.css'
 
 
@@ -37,9 +37,9 @@ export const NavLogIn = () => {
 
           <NavLink
             className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
-            to= 'accesories'
+            to= 'fishes'
           >
-            Accesorios
+            Peces
           </NavLink>
 
         </div>

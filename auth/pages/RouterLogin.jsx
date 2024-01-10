@@ -4,6 +4,7 @@ import { Dogs } from '../../pages/Dogs';
 import { Cats } from '../../pages/Cats';
 import { Navigate, Route, Routes } from 'react-router';
 import { Carousel } from '../../graphic- interface/components/Carousel';
+import { Carro2 } from '../../graphic- interface/components/Carro2';
 
 
 export const RouterLogin = () => {
