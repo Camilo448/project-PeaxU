@@ -2,3 +2,7 @@
     height: 50px;
     width: 100px;
 }
+
+.register__data-register input {
+    border-radius: 5px;
+}
