@@ -6,5 +6,8 @@
     height: 40vh;
     width: 80vh;
     text-align: center;
-    
+}
+
+.register__data-register input {
+    border-radius: 5px;
 }
