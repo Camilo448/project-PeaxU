@@ -2,3 +2,31 @@
     height: 50px;
     width: 100px;
 }
+.img-carousel{
+    height: 40vh;
+    width: 80vh;
+    text-align: center;
+    
+}
+
+
+.img-carousel img {
+    display: inline-block;
+}
+
+.slick-dots {
+    bottom: 20px; /* Ajusta la posición vertical de los puntos */
+  }
+  
+  .slick-dots li {
+    margin: 0 5px; /* Ajusta el espacio entre los puntos */
+  }
+  
+  .slick-dots li button {
+    font-size: 10px; /* Ajusta el tamaño de los puntos */
+    color: #fff; /* Cambia el color de los puntos inactivos */
+  }
+  
+  .slick-dots li.slick-active button {
+    color: #000; /* Cambia el color del punto activo */
+  }

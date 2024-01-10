@@ -8,9 +8,6 @@ import '../../src/styles.css'
 
 export const NavLogIn = () => {
 
-  const salir = () => {
-    console.log('salir');
-  }
   return (
     
     <nav className="navbar navbar-expand-lg navbar-ligth bg-light p-3">
@@ -26,39 +23,46 @@ export const NavLogIn = () => {
 
           <NavLink
             className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
-            to= 'hombre'
+            to= 'dogs'
           >
-            Hombre
+            Perros
           </NavLink>
 
           <NavLink
             className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
-            to= 'mujer'
+            to= 'cats'
           >
-            Mujer
+            Gatos
           </NavLink>
+
+          <NavLink
+            className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
+            to= 'accesories'
+          >
+            Accesorios
+          </NavLink>
+
         </div>
       </div>
 
       
-      <input type="text" placeholder='Buscar' />
+      <input type="text" placeholder='Buscar' className="ml-2"/>
       
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
-        <ul className="navbar-nav ml-auto">
+        
+        <NavLink 
+          to= 'register'
+          >
+            <button className="btn">Crear cuenta</button>
+        </NavLink>
 
-          <span className='nav-item nav-link text-info'>
-              example.correo.com
-          </span>
-
-        </ul>
-
-              <NavLink
-              className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
-                  to= 'login'
-              >
-                  Salir
-              </NavLink>
+        <NavLink 
+          to= 'login'
+          >
+            <button className="btn">Ingresar</button>
+        </NavLink>
+        
       </div>
     </nav>
   )
