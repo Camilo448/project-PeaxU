@@ -1,5 +1,4 @@
 import React from "react"
-import Logo from '../../assets/logo_peakU.png'
 import Image from '../../assets/register-image.jpg'
 import '../../src/styles.css'
 
