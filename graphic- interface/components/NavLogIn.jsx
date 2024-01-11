@@ -54,7 +54,7 @@ export const NavLogIn = () => {
         <NavLink 
           to= 'register'
           >
-            <button className="btn">Crear cuenta</button>
+            <button className="btn">Registrate</button>
         </NavLink>
 
         <NavLink 
