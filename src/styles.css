@@ -1,3 +1,11 @@
+.navLogin {
+    background-color: rgb(243, 219, 142);
+}
+
+.navButton {
+    color: rgba(121, 121, 121, 0.911);
+}
+
 #logo {
     height: 60px;
     width: 60px;
@@ -10,4 +18,22 @@
 
 .register__data-register input {
     border-radius: 5px;
+}
+
+.welcome__container--title {
+    color: rgba(121, 121, 121, 0.911);
+}
+
+.welcome__container--card {
+    border: 5px solid rgb(113, 226, 211);
+    color: rgba(121, 121, 121, 0.911);
+}
+
+.welcome__container--brand {
+    border: 5px solid rgb(241, 215, 68);
+}
+
+.brandImage {
+    width: 180px;
+    
 }

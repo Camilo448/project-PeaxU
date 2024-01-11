@@ -1,11 +1,10 @@
 import React from "react"
-import Logo from '../../assets/logo_peakU.png'
 import Image from '../../assets/register-image.jpg'
 import '../../src/styles.css'
 
 export const Register = () => {
     const colorNav = {
-        backgroundColor: '#F8E559', 
+        backgroundColor: 'rgb(243, 219, 142)',
         color: '#402B3A', 
         padding: '15px', 
       }
