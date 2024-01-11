@@ -4,7 +4,7 @@ import img_login from '../../assets/imagen_login.jpg';
 
 export const Login = () => {
   const colorNav = {
-    backgroundColor: '#F8E559', 
+    backgroundColor: 'rgb(243, 219, 142)', 
     color: '#402B3A', 
     padding: '15px', 
   }

@@ -10,33 +10,33 @@ export const NavLogIn = () => {
 
   return (
     
-    <nav className="navbar navbar-expand-lg navbar-ligth bg-light p-3">
-        
+    <nav className="navLogin navbar navbar-expand-lg navbar-ligth p-3">
+      
       <img
         src= { Logo }
-        className='img-fluid img-thumbnail'
+        className='img-fluid img-thumbnail ms-3'
         id='logo'
       />
 
-      <div className="navbar-collapse">
+      <div className="navbar-collapse ms-5">
         <div className="navbar-nav">
 
           <NavLink
-            className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
+            className= {({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'dogs'
           >
             Perros
           </NavLink>
 
           <NavLink
-            className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
+            className={({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'cats'
           >
             Gatos
           </NavLink>
 
           <NavLink
-            className={({isActive}) => `nav-item nav-link ${ isActive ? 'active': '' }`}
+            className={({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'fishes'
           >
             Peces
@@ -46,7 +46,10 @@ export const NavLogIn = () => {
       </div>
 
       
-      <input type="text" placeholder='Buscar' className="ml-2"/>
+      <div class="input-group align-items-center ms-5">
+        <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+
+      </div>
       
 
       <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
@@ -54,13 +57,13 @@ export const NavLogIn = () => {
         <NavLink 
           to= 'register'
           >
-            <button className="btn">Registrate</button>
+            <button className="navButton btn">Registrate</button>
         </NavLink>
 
         <NavLink 
           to= 'login'
           >
-            <button className="btn">Ingresar</button>
+            <button className="navButton btn">Ingresar</button>
         </NavLink>
         
       </div>
