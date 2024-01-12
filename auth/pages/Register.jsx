@@ -25,9 +25,13 @@ export const Register = () => {
                             <form className="col-md-5 d-flex flex-column justify-content-center align-items-center ms-5">
                                 <div className="form-group m-2 w-100">
                                     <h5 className="m-3 mb-5">Ingresa tus datos</h5>
-                                    <input type="text" className="form-control m-3" id="user" placeholder="Ingresa tu usuario"/>
+                                    <div className="d-flex">
+                                        <input type="text" className="form-control m-3 mb-0" id="name" placeholder="Ingresa tu nombre"/> 
+                                        <input type="text" className="form-control m-3 mb-0" id="lastname" placeholder="Ingresa tu apellido"/>   
+                                    </div>
                                     <input type="text" className="form-control m-3" id="email" placeholder="Ingresa tu correo"/>
                                     <input type="text" className="form-control m-3" id="password" placeholder="Ingresa una contraseña"/>
+                                    <input type="text" className="form-control m-3" id="phone" placeholder="Ingresa un telefono"/>
                                 </div>
                                 <div className="form-group m-3 d-flex justify-content-between align-items-center w-100">
                                     <button type="submit" className="btn btn-primary btn-block m-3">Registrarme</button>
