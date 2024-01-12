@@ -1,4 +1,5 @@
 import React from "react"
+import Logo from '../assets/Logo_dingo.jpg'
 import Bone from '../assets/boneIcon.png'
 import Delivery from '../assets/deliveryIcon.jpg'
 import Payment from '../assets/payIcon.png'
@@ -85,14 +86,40 @@ export const Welcome = () => {
                                 </tr>
                             </tbody>
                         </table>
-                        
-                        <div className="mt-4">
-                            <h5 className="text-center">Lo que necesites a tu domicilio</h5>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <footer>
+            <div class="container">
+                <div class="row p-4">
+                    <div class="col-md-4 d-flex justify-content-center">
+                        <img src={ Logo } alt="Logo" class="img-fluid col-md-5 mx-auto"/>
+                    </div>
+                    <div class="col-md-4 d-flex flex-column">
+                        <h4 className="welcome__text mb-4">Contacto</h4>
+                        <p className="welcome__text">Telefono: 3101231231</p>
+                        <p className="welcome__text">dingo_shop@example.com</p>
+                        <p className="welcome__text">@dingo_shop</p>
+                    </div>
+                    <div class="col-md-4 d-flex justify-content-center align-items-center flex-column">
+                        <h5 className="welcome__text mb-5">Suscríbete</h5>
+                        <div class="input-group mb-3">
+                            <input type="email" class="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon2"/>
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="button">Suscribirse</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <hr />
+                <div class="row mt-3">
+                    <div class="col-md-12 text-center">
+                        <p className="welcome__text">© 2024 Tu Empresa. Todos los derechos reservados.</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
    
   )
