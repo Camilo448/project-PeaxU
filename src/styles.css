@@ -11,13 +11,22 @@
     width: 60px;
 }
 .img-carousel{
-    height: 40vh;
-    width: 80vh;
-    text-align: center;
+    width: 100%;
+    height: 300px;
+    max-height: 100vh; /* Ajusta la altura máxima según el tamaño de la ventana */
+    object-fit: cover; /* Cubre el contenedor manteniendo las proporciones de la imagen */
+    object-position: center;
 }
 
 .register__data-register input {
     border-radius: 5px;
+}
+
+.welcome {
+    background-color: rgb(230, 255, 250);
+}
+.welcome__text {
+    color: rgba(121, 121, 121, 0.911);
 }
 
 .welcome__container--title {
@@ -33,6 +42,11 @@
     border: 5px solid rgb(241, 215, 68);
 }
 
+.welcome__footer {
+    background-color: rgb(243, 219, 142);
+    border-radius: 10px;
+}
+
 .brandImage {
     width: 180px;
     
@@ -43,10 +57,5 @@
     height: 50px;
 }
 
-.btn {
-    border: 1px solid rgb(0, 0, 0);
-    font-size: 8px;
-    margin: 2px;
-    
-}
+
 

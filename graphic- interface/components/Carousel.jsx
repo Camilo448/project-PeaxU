@@ -13,28 +13,23 @@ export const Carousel = () => {
     autoplay: true,
     autoplaySpeed: 5000,
   };
-  
-  const size = {
-    width: '800px',
-    height: '200px',
-  }
 
   return (
     <Slider {...settings}>
       <div className="col-md-10 d-flex justify-content-center" >
-        <img src="../../assets/carouselImages/imagen_1.jpg" alt="img 1" className='img-carousel' style={size}/>
+        <img src="../../assets/carouselImages/carrusel1.png" alt="img 1" className='img-carousel'/>
       </div>
       <div>
-        <img src="../../assets/carouselImages/imagen_2.jpg" alt="img 2" className='img-carousel'/>
+        <img src="../../assets/carouselImages/carrusel2.jpg" alt="img 2" className='img-carousel'/>
       </div>
       <div>
-        <img src="../../assets/carouselImages/imagen_3.jpg" alt="img 3" className='img-carousel'/>
+        <img src="../../assets/carouselImages/carrusel3.png" alt="img 3" className='img-carousel'/>
       </div>
       <div>
-        <img src="../../assets/carouselImages/imagen_4.jpg" alt="img 4" className='img-carousel'/>
+        <img src="../../assets/carouselImages/carrusel4.jpg" alt="img 4" className='img-carousel'/>
       </div>
       <div>
-        <img src="../../assets/carouselImages/imagen_5.jpg" alt="img 5" className='img-carousel'/>
+        <img src="../../assets/carouselImages/carrusel5.jpg" alt="img 5" className='img-carousel'/>
       </div>
     </Slider>
   );
