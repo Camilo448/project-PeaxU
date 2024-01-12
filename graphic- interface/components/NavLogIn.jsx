@@ -25,21 +25,53 @@ export const NavLogIn = () => {
             className= {({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'dogs'
           >
-            Perros
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Caninos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Alimentos</a>
+                  <a class="dropdown-item" href="#">Snacks</a>
+                  <a class="dropdown-item" href="#">Accesorios</a>
+                </div>
+              </li>
+            </ul>
           </NavLink>
 
           <NavLink
             className={({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'cats'
           >
-            Gatos
+           <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class=" navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Felinos
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Alimentos</a>
+                  <a class="dropdown-item" href="#">Arenas</a>
+                  <a class="dropdown-item" href="#">Accesorios</a>
+                </div>
+              </li>
+            </ul>
           </NavLink>
 
           <NavLink
             className={({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'fishes'
           >
-            Peces
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item dropdown">
+                <a class="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Peces
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a class="dropdown-item" href="#">Alimentos</a>
+                  <a class="dropdown-item" href="#">Accesorios peceras</a>
+                </div>
+              </li>
+            </ul>
           </NavLink>
 
         </div>
