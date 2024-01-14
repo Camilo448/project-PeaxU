@@ -25,15 +25,15 @@ export const NavLogIn = () => {
             className= {({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'dogs'
           >
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a class="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item dropdown">
+                <a className="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Caninos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Alimentos</a>
-                  <a class="dropdown-item" href="#">Snacks</a>
-                  <a class="dropdown-item" href="#">Accesorios</a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="#">Alimentos</a>
+                  <a className="dropdown-item" href="#">Snacks</a>
+                  <a className="dropdown-item" href="#">Accesorios</a>
                 </div>
               </li>
             </ul>
@@ -43,15 +43,15 @@ export const NavLogIn = () => {
             className={({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'cats'
           >
-           <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a class=" navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <ul className="navbar-nav ml-auto">
+              <li className="nav-item dropdown">
+                <a className=" navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Felinos
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Alimentos</a>
-                  <a class="dropdown-item" href="#">Arenas</a>
-                  <a class="dropdown-item" href="#">Accesorios</a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="#">Alimentos</a>
+                  <a className="dropdown-item" href="#">Arenas</a>
+                  <a className="dropdown-item" href="#">Accesorios</a>
                 </div>
               </li>
             </ul>
@@ -61,14 +61,14 @@ export const NavLogIn = () => {
             className={({isActive}) => `navButton nav-item nav-link ${ isActive ? 'active': '' }`}
             to= 'fishes'
           >
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item dropdown">
-                <a class="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item dropdown">
+                <a className="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Peces
                 </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="#">Alimentos</a>
-                  <a class="dropdown-item" href="#">Accesorios peceras</a>
+                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <a className="dropdown-item" href="#">Alimentos</a>
+                  <a className="dropdown-item" href="#">Accesorios peceras</a>
                 </div>
               </li>
             </ul>
@@ -78,8 +78,8 @@ export const NavLogIn = () => {
       </div>
 
       
-      <div class="input-group align-items-center ms-5">
-        <input type="text" class="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+      <div className="input-group align-items-center ms-5">
+        <input type="text" className="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
 
       </div>
       
