@@ -1,13 +1,34 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
+import { useForm } from "react-hook-form"
 import Image from '../../assets/register-image.jpg'
 import '../../src/styles.css'
+import { AuthContext } from "../../context/AuthContext"
+import { useNavigate } from "react-router"
 
 export const Register = () => {
+    const { register, handleSubmit, formState: { errors } } = useForm()
+
+    // Se importan la información requerida del contexto de usuario desestructurandola y haciendo uso del hook useContext donde se pasa como parámetro el contexto
+    const { signUp, userErrors, isAuthenticated } = useContext(AuthContext)
+
+    // Hook para poder enrutar hacia otros componentes en caso de una situación en específico
+    const navigate = useNavigate()
     const colorNav = {
         backgroundColor: 'rgb(243, 219, 142)',
         color: '#402B3A', 
         padding: '15px', 
-      }
+    }
+
+    // Método para realizar el registro
+    const onSubmit = handleSubmit(async values => {
+            signUp(values) 
+        }
+    )
+
+    // Verifica si el usuario se encuentra autenticado, en caso de ser así, redirige al homePage
+    useEffect(() => {
+        if(isAuthenticated) navigate('/welcome')
+    }, [isAuthenticated])
 
       let handleSubmit = (event) => {
         event.preventDefault();
@@ -55,16 +76,39 @@ export const Register = () => {
                             <div className="col-md-4 p-3 m-3 ms-5">
                                 <img src= { Image } className='img-fluid img-thumbnail'/>
                             </div>
-                            <form onSubmit={handleSubmit} className="col-md-5 d-flex flex-column justify-content-center align-items-center ms-5">
+                            <form className="col-md-5 d-flex flex-column justify-content-center align-items-center ms-5" onSubmit={onSubmit}>
+                                {
+                                    // Mapea userErrors, el cual es un arreglo, para imprimir los errores que puedan generarse durante la ejecución del registro
+                                    userErrors.map((error, i) => (
+                                        <div className="p-2" key={i} style={{backgroundColor: '#bf1650'}}>
+                                            <span className="text-white">{error.message}</span>
+                                        </div>
+                                    ))
+                                }
                                 <div className="form-group m-2 w-100">
                                     <h5 className="m-3 mb-5">Ingresa tus datos</h5>
                                     <div className="d-flex">
-                                        <input type="text" className="form-control m-3 mb-0" id="name" placeholder="Ingresa tu nombre"/> 
-                                        <input type="text" className="form-control m-3 mb-0" id="last_name" placeholder="Ingresa tu apellido"/>   
+                                        <input type="text" className="form-control m-3 mb-0"  placeholder="Ingresa tu nombre"
+                                            {...register('name', {
+                                                required: true
+                                            })}/>
+                                        {errors.name && (<p className='text-red-500'>El nombre es obligatorio</p>)}
+                                        <input type="text" className="form-control m-3 mb-0" {...register('last_name', {
+                                            required: true
+                                        })} placeholder="Ingresa tu apellido"/>   
                                     </div>
-                                    <input type="text" className="form-control m-3" id="email" placeholder="Ingresa tu correo"/>
-                                    <input type="text" className="form-control m-3" id="password" placeholder="Ingresa una contraseña"/>
-                                    <input type="text" className="form-control m-3" id="phone" placeholder="Ingresa un telefono"/>
+                                    <input type="text" className="form-control m-3" placeholder="Ingresa tu correo"
+                                        {...register('email', {
+                                            required: true
+                                        })}/>
+                                    <input type="text" className="form-control m-3" placeholder="Ingresa una contraseña"
+                                        {...register('password', {
+                                            required: true
+                                        })} />
+                                    <input type="text" className="form-control m-3" placeholder="Ingresa un telefono"
+                                    {...register('cellphone', {
+                                            required: true
+                                    })}/>
                                 </div>
                                 <div className="form-group m-3 d-flex justify-content-between align-items-center w-100">
                                     <button onClick={ registerPost } className="btn btn-primary btn-block m-3">Registrarme</button>
@@ -77,5 +121,4 @@ export const Register = () => {
             </div>
         </div>
     )
-  }
-  
+}
