@@ -1,5 +1,5 @@
 import React from 'react'
-import { Item_shopingCart } from './Item_shopingCart'
+import { ItemShoppingCart } from './ItemShoppingCart'
 
 export const ShoppingCart = () => {
   const colorNav = {
@@ -12,12 +12,12 @@ export const ShoppingCart = () => {
           <div className="row">
 
             <div className="col-9">
-              <Item_shopingCart/>
+              <ItemShoppingCart/>
             </div>
 
             <div className="card col-3">
 
-              <div className="card-header" style={ colorNav }>
+              <div className="card-header mt-3" style={ colorNav }>
                 <span className="fs-5 text-center">Resumen de la compra</span>
               </div>
 

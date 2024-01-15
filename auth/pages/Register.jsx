@@ -79,7 +79,7 @@ export const Register = () => {
                                     })}/>
                                 </div>
                                 <div className="form-group m-3 d-flex justify-content-between align-items-center w-100">
-                                    <button onClick={ registerPost } className="btn btn-primary btn-block m-3">Registrarme</button>
+                                    <button className="btn btn-primary btn-block m-3">Registrarme</button>
                                     <a>Inicia sesion</a>
                                 </div>
                             </form>

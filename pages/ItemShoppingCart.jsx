@@ -1,7 +1,7 @@
 import React from 'react'
 import { CounterApp } from '../graphic- interface/components/CounterApp'
 
-export const Item_shopingCart = () => {
+export const ItemShoppingCart = () => {
   const smallImage = {
     height: '70px',
     width: '70px',
