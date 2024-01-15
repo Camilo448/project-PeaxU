@@ -17,7 +17,7 @@ export const ShoppingCart = () => {
 
             <div className="card col-3">
 
-              <div class="card-header" style={ colorNav }>
+              <div className="card-header" style={ colorNav }>
                 <span className="fs-5 text-center">Resumen de la compra</span>
               </div>
 

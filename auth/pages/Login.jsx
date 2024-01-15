@@ -27,11 +27,11 @@ export const Login = () => {
 
   return (
     <div className="container mt-5">
-      <div class="row justify-content-center">
-      <div class="col-md-11">
+      <div className="row justify-content-center">
+      <div className="col-md-11">
           <div className="card">
 
-            <div class="card-header" style={ colorNav }>
+            <div className="card-header" style={ colorNav }>
                 <h4 className="text-center">Inicio de Sesión</h4>
             </div>
 

@@ -30,7 +30,40 @@ export const Register = () => {
         if(isAuthenticated) navigate('/welcome')
     }, [isAuthenticated])
 
-    return ( 
+      let handleSubmit = (event) => {
+        event.preventDefault();
+      }
+
+    let registerPost = () => {
+        let name = document.getElementById("name").value;
+        let last_name = document.getElementById("last_name").value;
+        let email = document.getElementById("email").value;
+        let password = document.getElementById("password").value;
+        let phone = document.getElementById("phone").value;
+
+        let myHeaders = new Headers();
+            myHeaders.append("Content-Type", "application/json");
+            
+            let raw = JSON.stringify({
+                "name": name,
+                "last_name": last_name,
+                "email": email,
+                "password": password,
+                "phone": phone
+            });
+            
+            let requestOptions = {
+                method: 'POST',
+                headers: myHeaders,
+                body: raw,
+                redirect: 'follow'
+            };
+        
+            fetch("http://localhost:4200/api/users/register", requestOptions)
+                .then(response => response.text())
+                .catch(error => console.log('error', error));
+    }
+        return ( 
 
         <div className="register m-5">
             <div className ="row justify-content-center">
@@ -78,7 +111,7 @@ export const Register = () => {
                                     })}/>
                                 </div>
                                 <div className="form-group m-3 d-flex justify-content-between align-items-center w-100">
-                                    <button type="submit" className="btn btn-primary btn-block m-3">Registrarme</button>
+                                    <button onClick={ registerPost } className="btn btn-primary btn-block m-3">Registrarme</button>
                                     <a>Inicia sesion</a>
                                 </div>
                             </form>
