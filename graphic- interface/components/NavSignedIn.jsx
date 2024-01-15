@@ -6,7 +6,7 @@ import '../../src/styles.css'
 
 
 
-export const NavLogIn = () => {
+export const NavSignedIn = () => {
 
   return (
     
@@ -20,8 +20,7 @@ export const NavLogIn = () => {
 
       <div className="navbar-collapse ms-5">
         <div className="navbar-nav">
-
-          <ul className="navbar-nav ml-auto align-items-center">
+          <ul className="navbar-nav ml-auto">
             <li className="nav-item dropdown">
               <a className="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Caninos
@@ -66,18 +65,16 @@ export const NavLogIn = () => {
       </div>
       
 
-      <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 d-flex justify-content-end">
+      <div className="navbar-collapse collapse w-100 order-3 dual-collapse2 me-5 d-flex flex-column align-items-end">
         
-        <NavLink 
-          to= 'register'
-          >
-            <button className="navButton btn">Registrate</button>
-        </NavLink>
+        <div>
+            <h5 className="mt-1">Hola Camilo</h5>
+        </div>
 
         <NavLink 
-          to= 'login'
+          to= '/welcome'
           >
-            <button className="navButton btn">Ingresar</button>
+            <button className="navButton btn">Cerrar sesion</button>
         </NavLink>
         
       </div>

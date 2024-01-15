@@ -1,7 +1,6 @@
 import React from 'react'
 import { NavLogIn } from '../../graphic- interface/components/NavLogIn'
-import { Dogs } from '../../pages/Dogs';
-import { Cats } from '../../pages/Cats';
+import { DogFood } from '../../pages/DogFood';
 import { Navigate, Route, Routes } from 'react-router';
 import { Carousel } from '../../graphic- interface/components/Carousel';
 import { Welcome } from '../../pages/Welcome'
@@ -16,9 +15,6 @@ export const RouterLogin = () => {
         <Welcome/>
 
         <Routes>
-
-            <Route path="dogs" element={ <Dogs/> } />
-            <Route path="cats" element={ <Cats/> } />
 
             <Route path="/" element={ <Navigate to="/welcome" />} />
 
