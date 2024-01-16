@@ -1,5 +1,6 @@
-import React, { createContext, useState } from "react"
-import { loginRequest, registerRequest } from "../api/user.api"
+import React, { createContext, useState, useEffect } from "react"
+import { loginRequest, registerRequest, verifyTokenRequest } from "../api/user.api"
+import Cookies from "js-cookie"
 
 // Se crea el contexto para el usuario
 export const AuthContext = createContext()
@@ -21,6 +22,8 @@ export const AuthProvider = ({ children }) => {
     /* Estado para gestionar los errores que se reciben desde el back e imprimirlos en pantalla para el usuario. 
        Inicializado como un arreglo vacío ya que puede recibir múltiples valores */
     const [userErrors, setUserErrors] = useState([])
+
+    const [loading, setLoading] = useState(true)
 
     /**
      * Permite el registro de un usuario en el sistema.
@@ -56,6 +59,38 @@ export const AuthProvider = ({ children }) => {
             setUserErrors(error.response.data.errors)
         }
     }
+
+    useEffect(() => {
+        const checkLogin = async () => {
+            const cookies = Cookies.get()
+
+            if (!cookies.token) {
+                setIsAuthenticated(false)
+                return setUser(null)
+                setLoading(false)
+            }
+                
+            try {
+                const res = await verifyTokenRequest(cookies.token)
+                if (!res.data) {
+                    setIsAuthenticated(false)
+                    setLoading(false)
+                    return
+                }
+                if (!res.data) setIsAuthenticated(false)
+                
+                setIsAuthenticated(true)
+                setUser(res.data)
+                setLoading(false)
+            } catch (error) {
+                console.log(error)
+                setIsAuthenticated(false)
+                setUser(null)
+                setLoading(false)
+            }
+        }
+        checkLogin()
+    }, [])
 
     // Este return es para poder exportar el componente que se usará para englobar los componentes que necesiten acceder a la información o métodos especificada.
     return (
