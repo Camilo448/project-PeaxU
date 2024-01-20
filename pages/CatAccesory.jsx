@@ -1,15 +1,9 @@
-import React from 'react';
-import { ProductCard } from '../graphic- interface/components/ProductCard';
-import { NavSignedIn } from '../graphic- interface/components/NavSignedIn';
-import { Carousel } from '../graphic- interface/components/Carousel';
-import { Footer } from '../graphic- interface/components/Footer';
-
+import React from 'react'
+import { ProductCard } from '../graphic- interface/components/ProductCard'
 export const CatAccesory = () => {
 
   return (
     <div className="cataccesory">
-        <NavSignedIn/>
-        <Carousel/>
         <h1 className='text-center m-5'>
             Accesorios para gatos
         </h1>
@@ -24,8 +18,7 @@ export const CatAccesory = () => {
                 <ProductCard/>
                 <ProductCard/>
             </div>
-        </div> 
-        <Footer/> 
+        </div>
     </div>
   )
 }

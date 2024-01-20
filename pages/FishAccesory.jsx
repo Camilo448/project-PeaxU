@@ -1,6 +1,6 @@
 import React from 'react';
 import { ProductCard } from '../graphic- interface/components/ProductCard';
-import { NavSignedIn } from '../graphic- interface/components/NavSignedIn';
+import { NavLogIn } from '../graphic- interface/components/NavLogIn';
 import { Carousel } from '../graphic- interface/components/Carousel';
 import { Footer } from '../graphic- interface/components/Footer';
 
@@ -8,7 +8,7 @@ export const FishAccesory = () => {
 
   return (
     <div className="fishaccesory">
-        <NavSignedIn/>
+        <NavLogIn/>
         <Carousel/>
         <h1 className='text-center m-5'>
             Accesorios para peceras

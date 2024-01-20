@@ -1,6 +1,5 @@
 import React, { createContext, useState, useEffect } from "react"
 import { loginRequest, registerRequest, verifyTokenRequest } from "../api/user.api"
-import Cookies from "js-cookie"
 
 // Se crea el contexto para el usuario
 export const AuthContext = createContext()
@@ -36,9 +35,7 @@ export const AuthProvider = ({ children }) => {
         try {
             const res = await registerRequest(user)
             setUser(res.data)
-            setIsAuthenticated(true)
         } catch (error) {
-            console.log(error)
             setUserErrors(error.response.data.errors)
         }
     }
@@ -53,50 +50,50 @@ export const AuthProvider = ({ children }) => {
     const signIn = async user => {
         try {
             const res = await loginRequest(user)
-            setUser(res.data)
+            // localStorage.setItem('user', JSON.stringify(res.data.user))
+            localStorage.setItem('token', res.data.token)
+            setUser(res.data.user)
             setIsAuthenticated(true)
+            console.log(res.data)
         } catch (error) {
+            console.log(error)
             setUserErrors(error.response.data.errors)
         }
     }
 
-    useEffect(() => {
-        const checkLogin = async () => {
-            const cookies = Cookies.get()
+    const logout = () => {
+        // localStorage.removeItem('user')
+        localStorage.removeItem('token')
+        setIsAuthenticated(false)
+        setUser(null)
+    }
 
-            if (!cookies.token) {
-                setIsAuthenticated(false)
-                return setUser(null)
-                setLoading(false)
-            }
-                
+    useEffect(() => {
+        console.log('Check token')
+        const checkToken = async () => {
             try {
-                const res = await verifyTokenRequest(cookies.token)
-                if (!res.data) {
-                    setIsAuthenticated(false)
-                    setLoading(false)
-                    return
+                const res = await verifyTokenRequest()
+                console.log('Check token exists in: ', res.data)
+                if (res.data) {
+                    console.log('Token verificado: ', res.data)
                 }
-                if (!res.data) setIsAuthenticated(false)
-                
                 setIsAuthenticated(true)
-                setUser(res.data)
-                setLoading(false)
             } catch (error) {
-                console.log(error)
-                setIsAuthenticated(false)
-                setUser(null)
-                setLoading(false)
+                console.log('Error al verificar el token: ', error)
+                if (error.response && error.response.status === 401) {
+                    logout()
+                }
             }
         }
-        checkLogin()
-    }, [])
+        checkToken()
+    }, [isAuthenticated, user, logout, verifyTokenRequest])
 
     // Este return es para poder exportar el componente que se usará para englobar los componentes que necesiten acceder a la información o métodos especificada.
     return (
         <AuthContext.Provider value={{
             signUp,
             signIn,
+            logout,
             user,
             isAuthenticated,
             userErrors
