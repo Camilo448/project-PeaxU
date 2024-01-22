@@ -15,11 +15,9 @@ import { FishAccesory } from '../pages/FishAccesory';
 export const AppRouter = () => {
   return (
     <>
-
       <Routes>
-
         <Route path="login" element={ <Login/> } />
-        <Route path="register" element={ <Register/> } />
+        <Route path="register" element={<Register />} />
         <Route path="/*" element={ <RouterLogin/>} />
         <Route path="dogfood" element={ <DogFood/> } />
         <Route path="dogsnack" element={ <DogSnack/> } />

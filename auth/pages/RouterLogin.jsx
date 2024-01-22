@@ -1,6 +1,5 @@
 import React from 'react'
-import { NavLogIn } from '../../graphic- interface/components/NavLogIn'
-import { DogFood } from '../../pages/DogFood';
+import { NavLogIn } from '../../graphic- interface/components/NavLogIn' 
 import { Navigate, Route, Routes } from 'react-router';
 import { Carousel } from '../../graphic- interface/components/Carousel';
 import { Welcome } from '../../pages/Welcome'
