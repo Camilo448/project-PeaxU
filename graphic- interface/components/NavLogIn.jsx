@@ -1,12 +1,51 @@
-import React, { useContext } from "react"
+import React, { useContext, useEffect, useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import Logo from '../../assets/Logo_dingo.jpg'
 import '../../src/styles.css'
 import { AuthContext } from "../../context/AuthContext"
+import { ProductContext } from "../../context/ProductContext"
 
 export const NavLogIn = () => {
 
     const { isAuthenticated, logout, user } = useContext(AuthContext)
+    const {
+        // filter,
+        // getProducts,
+        getProductsByCategory,
+        getProductsBySubCategory,
+        getProductsByParameter
+    } = useContext(ProductContext)
+    const [searchTerm, setSearchTerm] = useState('')
+
+    // useEffect(() => {
+    //     setSearchTerm(filter.value)
+    // }, [filter])
+
+    const handleSearchChange = event => {
+        setSearchTerm(event.target.value)
+    }
+
+    const handleSearch = () => {
+        getProductsByParameter(searchTerm)
+    }
+
+    const handleKeyPress = event => {
+        if (event.key === 'Enter') {
+            handleSearch()
+        }
+    }
+
+    const handleCategoryClick = id => {
+        getProductsByCategory(id)
+    }
+
+    const handleSubCategoryClick = id => {
+        getProductsBySubCategory(id)
+    }
+
+    // const handleAllProductsClick = () => {
+    //     getProducts()
+    // }
 
     return (
         
@@ -23,36 +62,59 @@ export const NavLogIn = () => {
 
             <ul className="navbar-nav ml-auto align-items-center">
                 <li className="nav-item dropdown">
-                <a className="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Caninos
-                </a>
-                <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link className="dropdown-item" to="dogfood">Alimento</Link>
-                    <Link className="dropdown-item" to="dogsnack">Snacks</Link>
-                    <Link className="dropdown-item" to="dogaccesory">Accesorios</Link>
-                </div>
+                    <a className="navButton nav-a dropdown-toggle" href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        onClick={() => handleCategoryClick(1)}
+                    >
+                        Caninos
+                    </a>
+                    <div className="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a className="dropdown-item" onClick={() => handleSubCategoryClick(1)}>Alimento</a>
+                        <a className="dropdown-item" onClick={() => handleSubCategoryClick(2)}>Snacks</a>
+                        <a className="dropdown-item" onClick={() => handleSubCategoryClick(3)}>Accesorios</a>
+                    </div>
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
                 <li className="nav-item dropdown">
-                <a className=" navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Felinos
-                </a>
+                    <a className=" navButton nav-a dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"
+                        onClick={() => handleCategoryClick(2)}
+                    >
+                        Felinos
+                    </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link className="dropdown-item" to="/cats">Alimento</Link>
-                    <Link className="dropdown-item" to="catsands">Snacks</Link>
-                    <Link className="dropdown-item" to="cataccesory">Accesorios</Link>
+                    <a className="dropdown-item" onClick={() => handleSubCategoryClick(4)}>Alimento</a>
+                    <a className="dropdown-item" onClick={() => handleSubCategoryClick(5)}>Snacks</a>
+                    <a className="dropdown-item" onClick={() => handleSubCategoryClick(6)}>Accesorios</a>
                 </div>
                 </li>
             </ul>
             <ul className="navbar-nav ml-auto">
-                <li className="nav-item dropdown">
-                <a className="navButton nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Peces
-                </a>
+                <li className="nav-item dropdown"
+                onClick={() => handleCategoryClick(3)}>
+                    <a className="navButton nav-a dropdown-toggle"
+                        href="#"
+                        id="navbarDropdown"
+                        role="button"
+                        data-toggle="dropdown"
+                        aria-haspopup="true"
+                        aria-expanded="false"       
+                    >
+                        Peces
+                    </a>
                 <div className="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <Link className="dropdown-item" to="fishfood">Alimento</Link>
-                    <Link className="dropdown-item" to="fishaccesory">Accesorios peceras</Link>
+                    <a className="dropdown-item" onClick={() => handleSubCategoryClick(7)}>Alimento</a>
+                    <a className="dropdown-item" onClick={() => handleSubCategoryClick(8)}>Accesorios peceras</a>
                 </div>
                 </li>
             </ul>
@@ -61,7 +123,13 @@ export const NavLogIn = () => {
 
         
         <div className="input-group align-items-center ms-5">
-            <input type="text" className="form-control" placeholder="Buscar" aria-label="Recipient's username" aria-describedby="basic-addon2"/>
+                <input type="text" className="form-control"
+                    placeholder="Buscar"
+                    aria-label="Recipient's username"
+                    aria-describedby="basic-addon2"
+                    onChange={() => handleSearchChange}
+                    onKeyDown={() => handleKeyPress}
+                />
 
         </div>
         
@@ -70,7 +138,7 @@ export const NavLogIn = () => {
             {isAuthenticated ? (
                 <>
                     <li>
-                        Bienvenido {user.name}
+                        Bienvenido {user && user.name}
                     </li>
                     <li>
                         <Link to='/' onClick={() => {

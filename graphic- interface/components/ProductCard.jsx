@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const ProductCard = () => {
+export const ProductCard = ({name, image, price}) => {
 
 const size = {
   width: '18rem'
@@ -8,10 +8,10 @@ const size = {
 
   return (
     <div className="card m-2" style={size}>
-        <img src= "../assets/example.webp" className="img-fluid card-img-top mx-auto d-block m-4" alt="Imagen del Producto"/>
+        <img src= {image} className="img-fluid card-img-top mx-auto d-block m-4" alt="Imagen del Producto"/>
         <div className="card-body">
-            <h5 className="card-title">Nombre del Producto</h5>
-            <p className="card-text text-right">Costo: $19.99</p>
+            <h5 className="card-title">{name}</h5>
+            <p className="card-text text-right">Costo: ${price}</p>
             <div className="form-group row d-flex align-items-center justify-content-center">
                 <label for="cantidadInput" className="col-sm-5 col-form-label text-right">Cantidad:</label>
                 <div className="col-sm-4">

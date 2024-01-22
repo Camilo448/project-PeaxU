@@ -1,5 +1,6 @@
 import React from 'react'
 import { ProductCard } from '../graphic- interface/components/ProductCard'
+
 export const CatAccesory = () => {
 
   return (
@@ -9,14 +10,9 @@ export const CatAccesory = () => {
         </h1>
         <div className="container mt-4">
             <div className="row m-5 d-flex justify-content-between">
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
-            </div>
-            <div className="row m-5 d-flex justify-content-between">
-                <ProductCard/>
-                <ProductCard/>
-                <ProductCard/>
+                {
+                      
+                }
             </div>
         </div>
     </div>
