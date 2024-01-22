@@ -19,15 +19,6 @@ export const AppRouter = () => {
         <Route path="login" element={ <Login/> } />
         <Route path="register" element={<Register />} />
         <Route path="/*" element={ <RouterLogin/>} />
-        <Route path="dogfood" element={ <DogFood/> } />
-        <Route path="dogsnack" element={ <DogSnack/> } />
-        <Route path="dogaccesory" element={ <DogAccesory/> } />
-        <Route path="catfood" element={ <CatFood/> } />
-        <Route path="catsands" element={ <CatSands/> } />
-        <Route path="cataccesory" element={ <CatAccesory/> } />
-        <Route path="fishfood" element={ <FishFood/> } />
-        <Route path="fishaccesory" element={ <FishAccesory/> } />
-
       </Routes>
     </>
   )

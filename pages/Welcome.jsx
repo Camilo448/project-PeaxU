@@ -65,11 +65,6 @@ export const Welcome = () => {
                             </div>
                         </div>
                     </div>
-                    <Link to="/products">
-                        <button className="btn btn-primary btn-block" >
-                            Explora nuestros productos!
-                        </button>
-                    </Link>
                 </div>
                 <hr/>
                 <div className="row d-flex m-4 justify-content-center">
