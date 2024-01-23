@@ -13,6 +13,14 @@ export const Products = () => {
         // getProductsByParameter
     } = useContext(ProductContext)
 
+    let cart = [];
+
+    const uploadCart = ( product ) => {
+        cart.push( product)
+        localStorage.setItem('cart', JSON.stringify(cart));
+        
+    }
+
     useEffect(() => {
         getProducts()
     }, [])
@@ -56,12 +64,18 @@ export const Products = () => {
         <div className="container mt-4">
             <div className="row m-5 d-flex justify-content-between">
                 {productsList.map(product => (
+                    <div>
                         <ProductCard
                             key={product.id}
                             name={product.name}
                             image={product.img_product}
                             price={product.price}
                         />
+                        <button onClick={ () => { uploadCart( product ) }} className="btn btn-primary btn-block m-2">Agregar al Carro de Compras</button>
+                    </div>
+                    
+
+                        
                     ))      
                 }
             </div>

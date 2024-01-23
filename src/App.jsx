@@ -10,6 +10,7 @@ import { Carousel } from "../graphic- interface/components/Carousel"
 import { Footer } from "../graphic- interface/components/Footer"
 import { Products } from "../pages/Products"
 import { ProductProvider } from "../context/ProductContext"
+import { ShoppingCart } from "../pages/ShoppingCart"
 
 export const App = () => {
     return (
@@ -24,6 +25,7 @@ export const App = () => {
                         <Route path="/login" element={<Login /> } />
                         <Route path="/register" element={<Register />} />
                         <Route path="/products" element={<Products />} />
+                        <Route path="/shopping" element={ <ShoppingCart/>} />
                     </Routes>
                     <Footer/>
                 </BrowserRouter>

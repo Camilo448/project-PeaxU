@@ -1,7 +1,12 @@
 import React from 'react'
 import { ItemShoppingCart } from './ItemShoppingCart'
+import { ProductCard } from "../graphic- interface/components/ProductCard"
 
 export const ShoppingCart = () => {
+
+  let items = localStorage.getItem('cart');
+  let products =JSON.parse(items);
+
   const colorNav = {
     backgroundColor: '#F8E559', 
     color: '#402B3A',
@@ -12,8 +17,22 @@ export const ShoppingCart = () => {
           <div className="row">
 
             <div className="col-9">
-              <ItemShoppingCart/>
+              {/* <ItemShoppingCart/> */}
+              <div className="row m-5 d-flex justify-content-between">
+                {products.map(product => (
+                    <div>
+                        <ProductCard
+                            key={product.id}
+                            name={product.name}
+                            image={product.img_product}
+                            price={product.price}
+                        />
+                        <button onClick={ () => { uploadCart( product ) }} className="btn btn-primary btn-block m-2">Agregar al Carro de Compras</button>
+                    </div>
+                    ))      
+                }
             </div>
+            </div>  
 
             <div className="card col-3">
 

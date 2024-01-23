@@ -1,16 +1,10 @@
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
+
 import { RouterLogin } from '../auth/pages/RouterLogin';
 import { Login } from '../auth/pages/Login';
 import { Register } from '../auth/pages/Register';
-import { DogFood } from '../pages/DogFood';
-import { DogSnack } from '../pages/DogSnack';
-import { DogAccesory } from '../pages/DogAccesory';
-import { CatFood } from '../pages/CatFood';
-import { CatSands } from '../pages/CatSands';
-import { CatAccesory } from '../pages/CatAccesory';
-import { FishFood } from '../pages/FishFood';
-import { FishAccesory } from '../pages/FishAccesory';
+import { ShoppingCart } from '../pages/ShoppingCart';
 
 export const AppRouter = () => {
   return (
@@ -19,6 +13,8 @@ export const AppRouter = () => {
         <Route path="login" element={ <Login/> } />
         <Route path="register" element={<Register />} />
         <Route path="/*" element={ <RouterLogin/>} />
+        <Route path="/shopping" element={ <ShoppingCart/>} />
+        
       </Routes>
     </>
   )
