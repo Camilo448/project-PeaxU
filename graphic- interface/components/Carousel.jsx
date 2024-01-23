@@ -2,11 +2,11 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { img1 } from '../../assets/carouselImages/carrusel1.png'
-import { img2 } from '../../assets/carouselImages/carrusel2.jpg'
-import { img3 } from '../../assets/carouselImages/carrusel3.png'
-import { img4 } from '../../assets/carouselImages/carrusel4.jpg'
-import { img5 } from '../../assets/carouselImages/carrusel5.jpg'
+import  img1  from '../../assets/carouselImages/carrusel1.png'
+import  img2  from '../../assets/carouselImages/carrusel2.jpg'
+import  img3  from '../../assets/carouselImages/carrusel3.png'
+import  img4  from '../../assets/carouselImages/carrusel4.jpg'
+import  img5  from '../../assets/carouselImages/carrusel5.jpg'
 
 export const Carousel = () => {
   const settings = {
