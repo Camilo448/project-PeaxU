@@ -43,7 +43,7 @@ export const NavLogIn = () => {
         
         <nav className="navLogin navbar navbar-expand-lg navbar-ligth p-3">
         
-        <Link to="/welcome" className='img-fluid img-thumbnail ms-3'><img
+        <Link to="/welcome" className='img-fluid img-thumbnail ms-3' onClick={() => setShowMenu(true)}><img
             src= { Logo }
             
             id='logo'
