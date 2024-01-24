@@ -45,6 +45,7 @@ export const Products = () => {
               />
               <button
                 onClick={() => {
+                  product.quantity = 1
                   newProduct(product);
                 }}
                 className="btn btn-primary btn-block m-2"

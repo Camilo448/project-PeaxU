@@ -5,6 +5,7 @@ import { ProductContext } from "../context/ProductContext";
 export const ShoppingCart = () => {
   const { uploadCart } = useContext(ProductContext);
   let products = uploadCart;
+  console.log(products);
 
   const colorNav = {
     backgroundColor: "#F8E559",
@@ -15,7 +16,6 @@ export const ShoppingCart = () => {
       <div>
         <div className="row">
           <div className="col-9">
-            {/* <ItemShoppingCart/> */}
             <div className="row m-5 d-flex justify-content-between">
               {products.map((product, i) => (
                 <ItemShoppingCart
@@ -23,6 +23,7 @@ export const ShoppingCart = () => {
                   key={i}
                   index={i}
                   name={product.name}
+                  quantity={ product.quantity }
                   image={product.img_product}
                   price={product.price}
                 />

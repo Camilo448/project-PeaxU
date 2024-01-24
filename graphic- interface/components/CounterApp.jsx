@@ -1,9 +1,10 @@
 
 import React, { useState } from 'react';
+import { ProductContext } from '../../context/ProductContext';
 
 export const CounterApp = () => {
 
-  const [ counter, setCounter ] = useState(1);
+  const { counter, setCounter } = useState(ProductContext);
 
   const sum = () => {
     //setCounter ( counter + 1 );
