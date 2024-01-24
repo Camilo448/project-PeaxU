@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import { ProductCard } from "../graphic- interface/components/ProductCard";
 import { ProductContext } from "../context/ProductContext";
 
@@ -13,50 +13,21 @@ export const Products = () => {
     getProducts,
     // getProductsByCategory,
     // getProductsBySubCategory,
-    // getProductsByParameter
+    // getProductsByParameter,
+    setUploadCart,
+    uploadCart
   } = useContext(ProductContext);
 
-  let cart = [];
-
-  const uploadCart = (product) => {
-    cart.push(product);
-    localStorage.setItem("cart", JSON.stringify(cart));
-  };
+  const newProduct = (product) => {
+      let newCart = uploadCart;
+      newCart.push(product);
+      setUploadCart(newCart);
+  }
 
   useEffect(() => {
     getProducts();
+    uploadCart;
   }, []);
-
-  // useEffect(() => {
-  //     switch (filter.type) {
-  //         case 'category':
-  //             getProductsByCategory(filter.value)
-  //             break
-  //         case 'subcategory':
-  //             getProductsBySubCategory(filter.value)
-  //             break
-  //         case 'search':
-  //             getProductsByParameter(filter.value)
-  //             break
-  //         default:
-  //             getProducts()
-  //     }
-  // }, [
-  //     filter, getProducts, getProductsBySubCategory, getProductsByCategory, getProductsByParameter
-  // ])
-
-  // const getTitleText = () => {
-  //     switch (filter.type) {
-  //         case 'category':
-  //             return `Categoría ${filter.value}`
-  //         case 'subcategory':
-  //             return `Subcategoría: ${filter.value}`
-  //         case 'search':
-  //             return `Esto es lo que coincide con tu búsqueda: ${filter.value}`
-  //         default:
-  //             return 'Nuestros productos'
-  //     }
-  // }
 
   return (
     <div className="cataccesory">
@@ -66,6 +37,7 @@ export const Products = () => {
           {productsList.map((product) => (
             <div className="card m-2" style={size}>
               <ProductCard
+                id={product.id}
                 key={product.id}
                 name={product.name}
                 image={product.img_product}
@@ -73,7 +45,7 @@ export const Products = () => {
               />
               <button
                 onClick={() => {
-                  uploadCart(product);
+                  newProduct(product);
                 }}
                 className="btn btn-primary btn-block m-2"
               >

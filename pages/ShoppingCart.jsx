@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { ItemShoppingCart } from "./ItemShoppingCart";
+import { ProductContext } from "../context/ProductContext";
 
 export const ShoppingCart = () => {
-  let items = localStorage.getItem("cart");
-  let products = JSON.parse(items);
+  const { uploadCart } = useContext(ProductContext);
+  let products = uploadCart;
 
   const colorNav = {
     backgroundColor: "#F8E559",
@@ -18,6 +19,8 @@ export const ShoppingCart = () => {
             <div className="row m-5 d-flex justify-content-between">
               {products.map((product, i) => (
                 <ItemShoppingCart
+                  id={product.id}
+                  key={i}
                   index={i}
                   name={product.name}
                   image={product.img_product}

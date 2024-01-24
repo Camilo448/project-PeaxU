@@ -1,5 +1,5 @@
 import React, { createContext, useState, useEffect } from "react"
-import { getByCategoryRequest, getByParameterRequest, getBySubCategoryRequest, getProductsRequest } from "../api/product.api"
+import { getByCategoryRequest, getByParameterRequest, getBySubCategoryRequest, getProductsRequest, getProductRequest } from "../api/product.api"
 
 export const ProductContext = createContext()
 
@@ -10,6 +10,8 @@ export const ProductProvider = ({ children }) => {
         type: 'all',
         value: ''
     })
+    const [uploadCart, setUploadCart] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     const getProductsByCategory = async (id) => {
         try {
@@ -37,6 +39,21 @@ export const ProductProvider = ({ children }) => {
             //     value: id
             // })
             console.log(res.data)
+        } catch (error) {
+            console.log(error)
+        }
+    }
+
+    const getProductsById = async (id) => {
+        try {
+            const res = await getProductRequest(id)
+            setProduct(res.data)
+            // setFilter({
+            //     type: 'subcategory',
+            //     value: id
+            // })
+            console.log(res.data)
+            setIsLoading(false)
         } catch (error) {
             console.log(error)
         }
@@ -70,6 +87,8 @@ export const ProductProvider = ({ children }) => {
         }
     }
     
+    
+
     return (
         <ProductContext.Provider value={{
             product,
@@ -78,7 +97,11 @@ export const ProductProvider = ({ children }) => {
             getProducts,
             getProductsByCategory,
             getProductsBySubCategory,
-            getProductsByParameter
+            getProductsByParameter,
+            setUploadCart,
+            getProductsById,
+            uploadCart,
+            isLoading
         }}>
             {children}
         </ProductContext.Provider>
