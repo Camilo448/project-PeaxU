@@ -1,7 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Logo from '../../assets/Logo_dingo.jpg'
+import axios from 'axios';
 
 export const Footer = () => {
+
+    const [email, setEmail] = useState('')
+
+    const handleSuscribe = async () => {
+        try {
+            await axios.post('http://localhost:4200/api/email', { email })
+            console.log('Email enviado con éxito')
+        } catch (error) {
+            console.error('Error al enviar el correo: ', error.response.data)
+        }
+    }
 
   return (
     <footer>
@@ -19,9 +31,12 @@ export const Footer = () => {
                 <div className="col-md-4 d-flex justify-content-center align-items-center flex-column">
                     <h5 className="welcome__text mb-5">Suscríbete</h5>
                     <div className="input-group mb-3">
-                        <input type="email" className="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon2"/>
+                          <input type="email" className="form-control" placeholder="Correo electrónico" aria-label="Correo electrónico" aria-describedby="basic-addon2"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}/>
                         <div className="input-group-append">
-                            <button className="btn btn-outline-secondary" type="button">Suscribirse</button>
+                              <button className="btn btn-outline-secondary" type="button"
+                              onClick={handleSuscribe}>Suscribirse</button>
                         </div>
                     </div>
                 </div>
