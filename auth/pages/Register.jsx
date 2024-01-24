@@ -20,9 +20,16 @@ export const Register = () => {
     }
 
     // Método para realizar el registro
-    const onSubmit = handleSubmit(async values => {
-            signUp(values) 
+    const onSubmit = handleSubmit(async values => {   
+      let result = await signUp(values)
+      console.log(result);
+      if (result) {
+          alert('Ya esta registrado, por favor inicia sesión')
+          navigate('/login')
+        } else {
+            alert('datos incorrectos')
         }
+      }
     )
 
     // Verifica si el usuario se encuentra autenticado, en caso de ser así, redirige al homePage

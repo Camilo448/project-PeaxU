@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
     /* Estado para verificar si un usuario ha iniciado sesión y se encuentra autenticado. 
       Inicializado en false -> No está autenticado */
     const [isAuthenticated, setIsAuthenticated] = useState(false)
-
+   
     /* Estado para gestionar los errores que se reciben desde el back e imprimirlos en pantalla para el usuario. 
        Inicializado como un arreglo vacío ya que puede recibir múltiples valores */
     const [userErrors, setUserErrors] = useState([])
@@ -35,8 +35,14 @@ export const AuthProvider = ({ children }) => {
         try {
             const res = await registerRequest(user)
             setUser(res.data)
+            if (res.status == 200) {
+                return true
+            } else {
+                return false
+            }
         } catch (error) {
             setUserErrors(error.response.data.errors)
+            return false
         }
     }
 

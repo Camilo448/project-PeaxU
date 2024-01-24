@@ -64,7 +64,7 @@ export const ProductProvider = ({ children }) => {
             //     type: 'all',
             //     value: ''
             // })
-            console.log(res.data[0].img_product)
+            console.log(res.data)
         } catch (error) {
             console.log(error)
         }

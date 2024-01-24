@@ -1,8 +1,9 @@
 import axios from 'axios'
 
 const instance = axios.create({
-    baseURL: 'http://localhost:4200/api',
-    withCredentials: true
+    baseURL: 'https://api-project-peaku-dev-sakc.3.us-1.fl0.io/api',
+    //baseURL: 'http://localhost:4200/api',
+    //withCredentials: true
 })
 
 export default instance
