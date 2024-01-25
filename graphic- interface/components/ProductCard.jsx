@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 export const ProductCard = ({ name, image, price, id }) => {
   const size = {
     width: "18rem",
-  }
+  };
 
   return (
     <Link to={`/products/${id}`}>
@@ -18,12 +18,10 @@ export const ProductCard = ({ name, image, price, id }) => {
           <h5 className="card-title">{name}</h5>
           <p className="card-text text-right">Costo: ${price}</p>
           <div className="form-group row d-flex align-items-center justify-content-center">
-            <div className="col-sm-4">
-            </div>
+            <div className="col-sm-4"></div>
           </div>
         </div>
       </div>
     </Link>
-    
   );
 };
