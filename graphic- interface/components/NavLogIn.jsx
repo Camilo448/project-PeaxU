@@ -51,16 +51,11 @@ export const NavLogIn = () => {
       <div className="d-grid gap-4 col-3 mx-auto d-flex justify-content-center">
         {showMenu && (
           <Link to="/products">
-            <button
-              className="btn btn-primary btn-block"
-              
-            >
+            <button className="btn btn-primary btn-block">
               Explora nuestros productos!
             </button>
           </Link>
         )}
-
-        
       </div>
 
       <div className="input-group align-items-center ms-3">

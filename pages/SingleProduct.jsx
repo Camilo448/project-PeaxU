@@ -1,16 +1,16 @@
 import React, { useContext, useEffect } from "react";
-import { useParams } from 'react-router-dom';
+import { useParams } from "react-router-dom";
 import { ProductContext } from "../context/ProductContext";
 
 export const SingleProduct = () => {
   const { productId } = useParams();
 
-  const { getProductsById, product, isLoading  } = useContext(ProductContext);
+  const { getProductsById, product, isLoading } = useContext(ProductContext);
 
   useEffect(() => {
     getProductsById(productId);
   }, [productId]);
-  
+
   if (!isLoading) {
     return (
       <div className="container mt-5">
@@ -22,11 +22,11 @@ export const SingleProduct = () => {
                   <div className="col-md-6 text-center">
                     <img src={product.img_product} className="img-fluid" />
                   </div>
-  
+
                   <div className="col-md-6 mt-2">
                     <h2 className="h4">{product.name}</h2>
                     <p className="lead">{product.price}</p>
-  
+
                     <div className="row">
                       <div className="col-6 mt-3">
                         <span className="mb-3">seleccione una referencia</span>
@@ -44,7 +44,7 @@ export const SingleProduct = () => {
                         />
                       </div>
                     </div>
-  
+
                     <p className="mt-5">
                       Lorem, ipsum dolor sit amet consectetur adipisicing elit.
                       Iure officia labore consectetur! Amet harum culpa aliquam
@@ -60,5 +60,4 @@ export const SingleProduct = () => {
       </div>
     );
   }
- 
 };
